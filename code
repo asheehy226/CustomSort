@@ -1,0 +1,56 @@
+package custsort;
+import java.io.*;
+import java.util.*;
+
+public class CustSort {
+
+    TreeSet<String> tree=new TreeSet<String>();
+    public static void main(String args[])
+    {
+        new CustSort().go();
+    }
+    public void go()
+
+    {
+        getlist();
+        System.out.println(tree);
+
+    }
+     void getlist()
+    {
+        try
+        {
+            File myfile= new File("doc.txt");
+            BufferedReader reader=new BufferedReader(new FileReader(myfile));
+            String line=null;
+            while((line=reader.readLine())!=null){
+                line= line.replaceAll("[-+^]*'0123456789", " ");  
+//str=str.replaceAll("\\W", " ")    //we can also use this regular expression   
+                addnames(line);
+
+
+            }
+        reader.close();
+        }
+
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
+
+    }
+    void addnames(String a)
+    {
+           tree.add(a);
+           for(int i=1;i<=a.length();i++)
+           {
+
+           }
+    }
+}
+
+
+    
+    
+
+
